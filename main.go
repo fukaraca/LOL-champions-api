@@ -2,8 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
-	"github.com/gin-gonic/gin"
 	"log"
 	"lol-champs-api/lib"
 )
@@ -11,7 +9,6 @@ import (
 func init() {
 	lib.ConnectDB()
 	lib.InitServer()
-
 }
 
 func main() {
@@ -26,26 +23,12 @@ func main() {
 }
 
 func routes() {
+	//routes for version REST API
+	lib.R.GET("/rest/champions/list", lib.GetHeroList)
 	lib.R.GET("/rest/champions", lib.GetRestRequest)
+	lib.R.POST("/rest/champions", lib.PostRestRequestAsForm)
+	lib.R.POST("/rest/champions/createWJSON", lib.PostRestRequestAsJSON)
+	lib.R.PATCH("/rest/champions", lib.UpdateRestHero)
+	lib.R.DELETE("/rest/champions", lib.DeleteRestHero)
 
-}
-
-func karsilama(c *gin.Context) {
-	url := c.Request.URL
-	met := c.Param("method")
-	fmt.Println(url.String())
-	a := url.Query()
-	counter := 0
-	for s, v := range a {
-		counter++
-		fmt.Println("key:", s, "value:", v)
-
-	}
-	fmt.Println(counter)
-	c.JSON(200, gin.H{
-		"key":               a,
-		"url:":              url.String(),
-		"method":            met,
-		"query parameters:": a,
-	})
 }

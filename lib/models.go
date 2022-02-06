@@ -12,7 +12,7 @@ var Coll *mongo.Collection
 var TIMEOUT = 10 * time.Second
 
 type LolHeroInfo struct {
-	Type    string                    `json:"type"`
+	Type    string                    `json:"type"  `
 	Format  string                    `json:"format"`
 	Version string                    `json:"version"`
 	Data    map[string]HeroInfoStruct `json:"data"`
