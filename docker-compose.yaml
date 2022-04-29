@@ -2,7 +2,7 @@ version: "3.8"
 services:
   mongodb:
     image: mongo
-    container_name: mongodb
+    container_name: mongodb4LOLchamps
     ports:
       - 27017:27017
     volumes:
@@ -12,7 +12,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=rootpass
   mongo-express:
     image: mongo-express
-    container_name: mongo-express
+    container_name: mongo-express4LOL-champs
     restart: always
     ports:
       - 8081:8081
@@ -21,7 +21,7 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
       - ME_CONFIG_MONGODB_SERVER=mongodb
 volumes:
-  data: {}
+  data:
 
 networks:
   default:

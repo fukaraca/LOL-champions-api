@@ -37,7 +37,7 @@ func GetRestRequest(c *gin.Context) {
 		// eg:  /rest/champions? key=hp & op=gt & val=510 makes  query to get hero names which has more hp than 510
 		key := uRl.Query()["key"]
 		op := uRl.Query()["op"]
-		val := uRl.Query()["value"]
+		val := uRl.Query()["val"]
 		if len(key) == 0 || len(op) == 0 || len(val) == 0 {
 			c.JSON(http.StatusBadRequest, gin.H{
 				"example:":        "/rest/champions?key=[SOME_KEY_FIELD]'ampersand_sign'op=[CONDITIONAL_LIKE_EQ_or_GT]'ampersand_sign'val=[CONDITIONAL_VALUE]",

@@ -11,6 +11,12 @@ func init() {
 	lib.InitServer()
 }
 
+/*
+	only when there is no initial data
+	insert this line to main
+
+	lib.FetchHeroesFromRiotApi()
+*/
 func main() {
 	routes()
 	defer func() {
