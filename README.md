@@ -1,8 +1,7 @@
 # LOL-CHAMPIONS-API
 
-Just a REST API app for CRUD' ing informations related to League of Legends champions, written with Go. Demonstration video at Youtube can be found [here](https://www.youtube.com/watch?v=mOx82beWVyE)
+Just a REST API app for CRUD' ing informations related to League of Legends champions, written with Go. 
 
-It will be updated for GraphQL and gRPC versions. 
 ## Installation
 Before using, you must have Go and Docker. Of course there will be no data in database but don't worry, you can fetch latest hero informations from LOL server with [this repo](https://github.com/fukaraca/JSON-to-mongoDB) 
 
